@@ -12,5 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <!--text-->
+        <item name="android:includeFontPadding">false</item>
     </style>
 </resources>
