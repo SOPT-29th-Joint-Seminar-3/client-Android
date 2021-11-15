@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">CloneGenie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--detail fragment-->
+    <string name="detail_title">2021.11.9</string>
+    <string name="detail_explain">솝트 3차 과제입니당</string>
+    <string name="detail_collection_song">수록곡</string>
+    <string name="detail_collection_song_count">5곡</string>
+    <string name="detail_select_all">전체선택</string>
+    <string name="detail_listen_all">전체듣기</string>
+    <string name="detail_editing_order">편집순</string>
+    <string name="detail_edit">편집</string>
 </resources>
