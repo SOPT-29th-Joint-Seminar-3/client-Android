@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".detail.ui.MyMusicFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:backgroundTint="#00C4C4C4"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_my_music_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="21dp"
+                android:fontFamily="@font/notosans"
+                android:text="@string/my_music_tool_bar_title"
+                android:textColor="#0B0B0B"
+                android:textFontWeight="700"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_my_music_subscribe"
+                android:layout_width="34dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_home_toolbar_subscribe"
+                app:layout_constraintEnd_toStartOf="@+id/iv_my_music_profile"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_my_music_profile"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginRight="18dp"
+                android:src="@drawable/ic_home_toolbar_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_tool_bar"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="-110dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_my_music_my_favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/img_my_music_my_favorite"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_my_music_my_storage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="19dp"
+                    android:src="@drawable/img_my_music_my_storage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_my_music_recent_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/img_my_music_recent_play"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_my_music_my_favorite" />
+
+                <ImageView
+                    android:id="@+id/iv_my_music_lot_played"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="19dp"
+                    android:src="@drawable/img_my_music_lot_played"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_my_music_my_storage" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_playlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="37dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_playlist"
+                    android:textColor="#0B0B0B"
+                    android:textFontWeight="700"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_my_music_recent_play" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_whole_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="23dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_whole"
+                    android:textColor="#000000"
+                    android:textFontWeight="400"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_playlist"
+                    app:layout_goneMarginStart="19dp" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_whole"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="23dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_count"
+                    android:textColor="#4294F7"
+                    android:textFontWeight="400"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_my_music_whole_number"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_playlist" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_edit_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="78dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_edit_order"
+                    android:textColor="#000000"
+                    android:textFontWeight="400"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_spread_button"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_my_music_lot_played" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="78dp"
+                    android:layout_marginEnd="18dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_order"
+                    android:textColor="#000000"
+                    android:textFontWeight="400"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_my_music_lot_played" />
+
+                <ImageView
+                    android:id="@+id/iv_spread_button"
+                    android:layout_width="8dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="85dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="#000000"
+                    android:src="@drawable/ic_detail_editing_order"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_my_music_edit"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_my_music_lot_played" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_whole_number"
+                    app:srcCompat="@drawable/ic_my_music_new_button" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_whole_number"
+                    app:srcCompat="@drawable/ic_my_music_image_button" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
