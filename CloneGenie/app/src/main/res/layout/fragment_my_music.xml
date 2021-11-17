@@ -203,6 +203,50 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_my_music_whole_number"
                     app:srcCompat="@drawable/ic_my_music_image_button" />
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_my_music"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:nestedScrollingEnabled="false"
+                    android:padding="19dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_my_music" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_fold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_my_music">
+
+                    <ImageView
+                        android:id="@+id/iv_unfold_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_unfold_button"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_my_music_unfold" />
+
+                    <TextView
+                        android:id="@+id/tv_unfold_button"
+                        android:text="펼치기"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/notosans_regular"
+                        android:textColor="@color/grey_2"
+                        app:layout_constraintStart_toEndOf="@+id/iv_unfold_button"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
