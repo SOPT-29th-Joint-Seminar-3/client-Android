@@ -36,8 +36,8 @@
             android:id="@+id/iv_back_allow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
             android:src="@drawable/ic_detail_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -78,7 +78,7 @@
             android:id="@+id/iv_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="17dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/ic_detail_star"
             app:layout_constraintEnd_toStartOf="@+id/iv_headset"
@@ -113,20 +113,30 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
         <ImageView
+            android:id="@+id/iv_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="19dp"
+            android:src="@drawable/ic_detail_circle"
+            android:layout_marginTop="21dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_playlist" />
+
+        <ImageView
             android:id="@+id/iv_playlist_allow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
             android:src="@drawable/ic_detail_top_arrow"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_explain"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_explain" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_circle"
+            app:layout_constraintEnd_toEndOf="@+id/iv_circle"
+            app:layout_constraintStart_toStartOf="@+id/iv_circle"
+            app:layout_constraintTop_toTopOf="@+id/iv_circle" />
 
         <ImageView
             android:id="@+id/iv_select_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="49dp"
             android:layout_marginEnd="5dp"
             android:src="@drawable/ic_detail_all_select_allow"
             app:layout_constraintEnd_toStartOf="@+id/tv_select_all"
@@ -150,7 +160,7 @@
             android:id="@+id/iv_editing_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="22dp"
+            android:layout_marginEnd="26dp"
             android:src="@drawable/ic_detail_editing_order"
             app:layout_constraintBottom_toBottomOf="@+id/tv_editing_order"
             app:layout_constraintEnd_toStartOf="@+id/tv_edit"
@@ -259,5 +269,18 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_listen_all"
             tools:itemCount="4"
             tools:listitem="@layout/item_detail" />
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="wrap_content"
+            app:layout_constraintHorizontal_bias="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="18dp"
+            android:src="@drawable/ic_home_toolbar_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_back_allow"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
