@@ -1,14 +1,12 @@
 package org.sopt.clonegenie.detail.ui
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.sopt.clonegenie.R
 import org.sopt.clonegenie.databinding.FragmentMyMusicBinding
@@ -51,7 +49,8 @@ class MyMusicFragment : Fragment() {
         )
 
         val adpater = MyMusicRecyclerviewAdapter(playList) { position ->
-            val transaction = requireActivity().supportFragmentManager.beginTransaction().replace(R.layout.fragment_detail,DetailFragment())
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fcv_home_container, DetailFragment())
             transaction.commit()
         }
         binding.rvMyMusic.adapter = adpater
@@ -65,11 +64,11 @@ class MyMusicFragment : Fragment() {
         binding.layoutFold.setOnClickListener {
             if (adapter.loadStatus) {
                 binding.ivUnfoldButton.setImageResource(R.drawable.ic_my_music_fold)
-                binding.tvUnfoldButton.setText("접기")
+                binding.tvUnfoldButton.setText(R.string.my_music_fold)
                 adapter.loadStatus = false
             } else {
                 binding.ivUnfoldButton.setImageResource(R.drawable.ic_my_music_unfold)
-                binding.tvUnfoldButton.setText("펼치기")
+                binding.tvUnfoldButton.setText(R.string.my_music_unfold)
                 adapter.loadStatus = true
             }
             adapter.notifyDataSetChanged()

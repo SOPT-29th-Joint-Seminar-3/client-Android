@@ -19,11 +19,16 @@
     <string name="home_bottom_navigation_home">홈</string>
     <string name="home_player_music_name">21</string>
     <string name="home_player_music_singer">Gracie Abrams</string>
+
+    <!--my music fragment-->
     <string name="my_music_tool_bar_title">내음악</string>
     <string name="my_music_playlist">내 플레이리스트</string>
     <string name="my_music_whole">전체</string>
     <string name="my_music_count">211</string>
     <string name="my_music_edit_order">편집순</string>
     <string name="my_music_order">편집</string>
+    <string name="my_music_fold">접기</string>
+    <string name="my_music_unfold">펼치기</string>
+
 
 </resources>

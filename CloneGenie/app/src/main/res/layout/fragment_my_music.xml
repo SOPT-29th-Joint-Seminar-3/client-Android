@@ -238,7 +238,7 @@
 
                     <TextView
                         android:id="@+id/tv_unfold_button"
-                        android:text="펼치기"
+                        android:text="@string/my_music_unfold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
