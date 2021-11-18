@@ -113,7 +113,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_circle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="19dp"
@@ -127,10 +127,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_detail_top_arrow"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_circle"
+            app:layout_constraintEnd_toEndOf="@+id/iv_circle"
+            app:layout_constraintStart_toStartOf="@+id/iv_circle"
+            app:layout_constraintTop_toTopOf="@+id/iv_circle" />
 
         <ImageView
             android:id="@+id/iv_select_all"
