@@ -1,20 +1,26 @@
 package org.sopt.clonegenie.detail.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import org.sopt.clonegenie.R
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.sopt.clonegenie.databinding.FragmentDetailBinding
 import org.sopt.clonegenie.detail.adapter.DetailRecyclerViewAdapter
-import org.sopt.clonegenie.detail.data.DetailData
+import org.sopt.clonegenie.detail.data.Song
+import org.sopt.clonegenie.detail.remote.DetailPlayListServiceCreator
 import org.sopt.clonegenie.util.DetailRecyclerViewItemDecoration
 
 class DetailFragment : Fragment() {
     private var _binding: FragmentDetailBinding? = null
     val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,18 +31,26 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initAdapter()
+        initNetwork()
     }
 
-    private fun initAdapter() {
-        val musicList = mutableListOf(
-            DetailData(R.drawable.img_detail_gracie_abrams, "21", "Gracie Abrams"),
-            DetailData(R.drawable.img_detail_seventeen, "21", "Gracie Abrams"),
-            DetailData(R.drawable.img_detail_mina, "tlssksmsthd", "미나와 채원"),
-            DetailData(R.drawable.img_detail_gracie_abrams2, "신나는 송", "Gracie Abrams"),
-            DetailData(R.drawable.img_detail_exo, "으르렁", "엑소")
-        )
+    private fun initNetwork() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val list = DetailPlayListServiceCreator.detailService.getDetailPlayList("1")
+                withContext(Dispatchers.Main) {
+                    binding.tvTitle.text = list.data?.title
+                    binding.tvExplain.text = list.data?.description
+                    binding.tvCollectionSongCount.text = list.data?.total.toString() + "곡"
+                    initAdapter(list.data!!.songs)
+                }
+            } catch (e: Exception) {
+                Log.d("실패", e.message!!)
+            }
+        }
+    }
 
+    private fun initAdapter(musicList: MutableList<Song>) {
         val adpater = DetailRecyclerViewAdapter(musicList)
         binding.rvDetail.adapter = adpater
         binding.rvDetail.addItemDecoration(DetailRecyclerViewItemDecoration(14))
