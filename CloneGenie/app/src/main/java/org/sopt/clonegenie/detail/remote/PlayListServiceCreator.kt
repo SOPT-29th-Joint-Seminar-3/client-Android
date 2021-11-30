@@ -3,7 +3,7 @@ package org.sopt.clonegenie.detail.remote
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object DetailPlayListServiceCreator {
+object PlayListServiceCreator {
     private const val BASE_URL = "https://asia-northeast3-wesopt29-328c5.cloudfunctions.net/api/"
 
     private val retrofit: Retrofit = Retrofit.Builder()
@@ -11,5 +11,5 @@ object DetailPlayListServiceCreator {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val detailService: DetailPlayListService = retrofit.create(DetailPlayListService::class.java)
+    val detailService: PlayListService = retrofit.create(PlayListService::class.java)
 }
