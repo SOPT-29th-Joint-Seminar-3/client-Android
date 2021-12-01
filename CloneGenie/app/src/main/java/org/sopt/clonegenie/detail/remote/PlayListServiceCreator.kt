@@ -11,6 +11,6 @@ object PlayListServiceCreator {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-
     val myMusicPlayListService = retrofit.create(MyMusicPlayListService::class.java)
+    val detailService: PlayListService = retrofit.create(PlayListService::class.java)
 }

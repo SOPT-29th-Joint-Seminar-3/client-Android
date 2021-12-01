@@ -12,7 +12,13 @@
         <entry key="..\:/GitHub/client-Android/CloneGenie/app/src/main/res/layout/fragment_my_music.xml" value="0.3802055164954029" />
         <entry key="..\:/GitHub/client-Android/CloneGenie/app/src/main/res/layout/item_detail.xml" value="0.18009118541033434" />
         <entry key="..\:/GitHub/client-Android/CloneGenie/app/src/main/res/layout/item_my_music.xml" value="0.36684782608695654" />
+        <entry key="..\:/Users/TFX5470H/AndroidStudioProjects/SOPT_Genie/CloneGenie/app/src/main/res/drawable/ic_detail_star.xml" value="0.24791666666666667" />
+        <entry key="..\:/Users/TFX5470H/AndroidStudioProjects/SOPT_Genie/CloneGenie/app/src/main/res/drawable/ic_detail_star_checked.xml" value="0.1" />
+        <entry key="..\:/Users/TFX5470H/AndroidStudioProjects/SOPT_Genie/CloneGenie/app/src/main/res/drawable/ic_detail_unchecked.xml" value="0.1" />
+        <entry key="..\:/Users/TFX5470H/AndroidStudioProjects/SOPT_Genie/CloneGenie/app/src/main/res/drawable/selector_detail_star.xml" value="0.1398148148148148" />
+        <entry key="..\:/Users/TFX5470H/AndroidStudioProjects/SOPT_Genie/CloneGenie/app/src/main/res/layout/fragment_detail.xml" value="0.8" />
         <entry key="..\:/Users/TFX5470H/AndroidStudioProjects/SOPT_Genie/CloneGenie/app/src/main/res/layout/fragment_my_music.xml" value="0.18055555555555555" />
+        <entry key="..\:/Users/TFX5470H/AndroidStudioProjects/SOPT_Genie/CloneGenie/app/src/main/res/layout/item_detail.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/chang/AndroidStudioProjects/client-Android/CloneGenie/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/chang/AndroidStudioProjects/client-Android/CloneGenie/app/src/main/res/drawable/bg_home_toolbar_subscribe.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/chang/AndroidStudioProjects/client-Android/CloneGenie/app/src/main/res/drawable/ic_detail_all_listen_allow.xml" value="0.38229166666666664" />
