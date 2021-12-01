@@ -86,8 +86,8 @@
                     android:id="@+id/iv_my_music_recent_play"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="21dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
                     android:src="@drawable/img_my_music_recent_play"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/iv_my_music_my_favorite" />
@@ -101,6 +101,210 @@
                     android:src="@drawable/img_my_music_lot_played"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/iv_my_music_my_storage" />
+
+                <ImageView
+                    android:id="@+id/iv_my_music_my_favorite_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="13dp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_my_favorite"
+                    app:layout_constraintTop_toTopOf="@+id/iv_my_music_my_favorite"
+                    app:srcCompat="@drawable/ic_my_music_my_favorite" />
+
+                <ImageView
+                    android:id="@+id/iv_my_music_my_storage_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="13dp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_my_storage"
+                    app:layout_constraintTop_toTopOf="@+id/iv_my_music_my_storage"
+                    app:srcCompat="@drawable/ic_my_music_my_storage" />
+
+                <ImageView
+                    android:id="@+id/iv_my_music_recent_play_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="13dp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_recent_play"
+                    app:layout_constraintTop_toTopOf="@+id/iv_my_music_recent_play"
+                    app:srcCompat="@drawable/ic_my_music_recent_play" />
+
+                <ImageView
+                    android:id="@+id/iv_my_music_lot_played_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="13dp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_lot_played"
+                    app:layout_constraintTop_toTopOf="@+id/iv_my_music_lot_played"
+                    app:srcCompat="@drawable/ic_my_music_lot_played" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_recent_play_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_recent_play_title"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_recent_play"
+                    app:layout_constraintTop_toTopOf="@+id/iv_my_music_recent_play" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_recent_play_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="55"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="500"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_recent_play"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_recent_play_title" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_recent_play_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="21dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_unit"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="500"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_my_music_recent_play_count"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_recent_play_title" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_my_favorite_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_my_favorite_title"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_my_favorite"
+                    app:layout_constraintTop_toTopOf="@+id/iv_my_music_my_favorite" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_my_favorite_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="55"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="500"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_my_favorite"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_my_favorite_title" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_my_favorite_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="21dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_unit"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="500"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_my_music_my_favorite_count"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_my_favorite_title" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_my_storage_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_my_storage_title"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_my_storage"
+                    app:layout_constraintTop_toTopOf="@+id/iv_my_music_my_storage" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_my_storage_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="12"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="500"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_my_storage"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_my_storage_title" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_my_storage_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="21dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_unit"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="500"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_my_music_my_storage_count"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_my_storage_title" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_lot_played_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_lot_played_title"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_lot_played"
+                    app:layout_constraintTop_toTopOf="@+id/iv_my_music_lot_played" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_lot_played_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="11"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="500"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@+id/iv_my_music_lot_played"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_lot_played_title" />
+
+                <TextView
+                    android:id="@+id/tv_my_music_lot_played_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="21dp"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/my_music_unit"
+                    android:textColor="#FAFAFA"
+                    android:textFontWeight="500"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_my_music_lot_played_count"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_my_music_lot_played_title" />
 
                 <TextView
                     android:id="@+id/tv_my_music_playlist"
@@ -150,9 +354,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="79dp"
+                    android:layout_marginEnd="5dp"
                     android:fontFamily="@font/notosans"
                     android:text="@string/my_music_edit_order"
-                    android:layout_marginEnd="5dp"
                     android:textColor="#000000"
                     android:textFontWeight="400"
                     android:textSize="12sp"
@@ -239,11 +443,11 @@
 
                     <TextView
                         android:id="@+id/tv_unfold_button"
-                        android:text="@string/my_music_unfold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:fontFamily="@font/notosans_regular"
+                        android:text="@string/my_music_unfold"
                         android:textColor="@color/grey_2"
                         app:layout_constraintStart_toEndOf="@+id/iv_unfold_button"
                         app:layout_constraintTop_toTopOf="parent" />
