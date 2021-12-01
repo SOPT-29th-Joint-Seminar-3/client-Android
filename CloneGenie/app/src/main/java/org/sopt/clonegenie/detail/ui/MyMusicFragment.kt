@@ -2,17 +2,23 @@ package org.sopt.clonegenie.detail.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.*
 import org.sopt.clonegenie.R
 import org.sopt.clonegenie.databinding.FragmentMyMusicBinding
 import org.sopt.clonegenie.detail.adapter.MyMusicRecyclerviewAdapter
 import org.sopt.clonegenie.detail.data.MyMusicData
+import org.sopt.clonegenie.detail.remote.PlayListServiceCreator
 import org.sopt.clonegenie.util.DetailRecyclerViewItemDecoration
+import kotlin.properties.Delegates
 
 
 class MyMusicFragment : Fragment() {
@@ -25,6 +31,7 @@ class MyMusicFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_music, container, false)
+        initNetwork()
         return binding.root
     }
 
@@ -74,6 +81,28 @@ class MyMusicFragment : Fragment() {
             adapter.notifyDataSetChanged()
         }
     }
+
+
+    private fun initNetwork(){
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val response = PlayListServiceCreator.myMusicPlayListService.getMyMusicPlayList()
+                val data = response.body()?.data
+                withContext(Dispatchers.Main) {
+                    if (data != null) {
+                        binding.tvMyMusicMyFavoriteCount.text = data.likeCount.toString()
+                        binding.tvMyMusicMyStorageCount.text = data.saveCount.toString()
+                        binding.tvMyMusicRecentPlayCount.text = data.recentPlayedCount.toString()
+                        binding.tvMyMusicLotPlayedCount.text = data.mostPlayedCount.toString()
+                    }
+                }
+
+            } catch (e: Exception) {
+                Log.d("실패", e.message!!)
+            }
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

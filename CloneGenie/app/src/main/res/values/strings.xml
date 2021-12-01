@@ -29,6 +29,11 @@
     <string name="my_music_order">편집</string>
     <string name="my_music_fold">접기</string>
     <string name="my_music_unfold">펼치기</string>
+    <string name="my_music_my_favorite_title">내가 좋아한</string>
+    <string name="my_music_unit">곡</string>
+    <string name="my_music_my_storage_title">내가 보관한</string>
+    <string name="my_music_recent_play_title">최근 재생한</string>
+    <string name="my_music_lot_played_title">많이 재생한</string>
 
 
 </resources>
