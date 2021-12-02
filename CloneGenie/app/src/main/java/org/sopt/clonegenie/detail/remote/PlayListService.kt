@@ -18,4 +18,5 @@ interface PlayListService {
     suspend fun getDetailStart(
         @Path("id") username: String
     ): ResponseWrapperData<DetailStarResponseData>
+
 }

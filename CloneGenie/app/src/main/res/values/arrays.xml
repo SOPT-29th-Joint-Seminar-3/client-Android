@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="cover">
+        <item>@drawable/img_detail_gracie_abrams2</item>
+        <item>@drawable/img_detail_seventeen</item>
+        <item>@drawable/img_my_music_untitled</item>
+        <item>@drawable/img_detail_mina</item>
+        <item>@drawable/img_detail_exo</item>
+        <item>@drawable/img_detail_gracie_abrams2</item>
+        <item>@drawable/img_detail_seventeen</item>
+        <item>@drawable/img_my_music_untitled</item>
+        <item>@drawable/img_detail_mina</item>
+        <item>@drawable/img_detail_exo</item>
+    </integer-array>
+
+</resources>
