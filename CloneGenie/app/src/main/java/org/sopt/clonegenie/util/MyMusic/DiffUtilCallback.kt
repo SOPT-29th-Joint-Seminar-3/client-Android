@@ -1,18 +1,18 @@
 package org.sopt.clonegenie.util.MyMusic
 
 import androidx.recyclerview.widget.DiffUtil
-import org.sopt.clonegenie.detail.data.MyMusicData
+import org.sopt.clonegenie.detail.data.ResponseMyMusicPlayListData
 
-class DiffUtilCallback : DiffUtil.ItemCallback<MyMusicData>() {
+class DiffUtilCallback : DiffUtil.ItemCallback<ResponseMyMusicPlayListData.Likes>() {
     override fun areItemsTheSame(
-        oldItem: MyMusicData,
-        newItem: MyMusicData
+        oldItem: ResponseMyMusicPlayListData.Likes,
+        newItem: ResponseMyMusicPlayListData.Likes
     ) =
-        (oldItem.playList == newItem.playList)
+        (oldItem.id == newItem.id)
 
     override fun areContentsTheSame(
-        oldItem: MyMusicData,
-        newItem: MyMusicData
+        oldItem: ResponseMyMusicPlayListData.Likes,
+        newItem: ResponseMyMusicPlayListData.Likes
     ) =
         (oldItem == newItem)
 }
