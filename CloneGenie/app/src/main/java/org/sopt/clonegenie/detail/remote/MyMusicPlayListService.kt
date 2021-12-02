@@ -15,7 +15,6 @@ interface MyMusicPlayListService {
     @FormUrlEncoded
     @POST("playlist")
     suspend fun createPlayList(
-        //Body body: CreatePlayListRequest
         @Field("title") title: String,
         @Field("description") description: String
     ): CreatePlayListResponse
