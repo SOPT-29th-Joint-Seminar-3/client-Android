@@ -2,6 +2,7 @@ package org.sopt.clonegenie.detail.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -25,13 +26,28 @@ class MyMusicFragment : Fragment() {
 
     private var _binding: FragmentMyMusicBinding? = null
     private val binding get() = _binding!!
+    var upMenuData = mutableListOf<MutableLiveData<String>>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_music, container, false)
-        initNetwork()
+        CoroutineScope(Dispatchers.Main).launch {
+            initNetwork().await()
+            binding.getData = this@MyMusicFragment
+//            Log.d("아니 왜진짜","${upMenuData[0].value}")
+            upMenuData.add(MutableLiveData<String>().apply { value = "시1발이게맞냐고" })
+            Handler().postDelayed({
+                upMenuData[0].value = "바뀌어라"
+            },4000L)
+        }
+        binding.lifecycleOwner = viewLifecycleOwner
+//        upMenuData.add(MutableLiveData<String>().apply { value = "시1발이게맞냐고" })
+//        Handler().postDelayed({
+//            upMenuData[0].value = "바뀌어라"
+//        },4000L)
         return binding.root
     }
 
@@ -83,25 +99,32 @@ class MyMusicFragment : Fragment() {
     }
 
 
-    private fun initNetwork(){
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val response = PlayListServiceCreator.myMusicPlayListService.getMyMusicPlayList()
-                val data = response.body()?.data
-                withContext(Dispatchers.Main) {
-                    if (data != null) {
-                        binding.tvMyMusicMyFavoriteCount.text = data.likeCount.toString()
-                        binding.tvMyMusicMyStorageCount.text = data.saveCount.toString()
-                        binding.tvMyMusicRecentPlayCount.text = data.recentPlayedCount.toString()
-                        binding.tvMyMusicLotPlayedCount.text = data.mostPlayedCount.toString()
-                    }
-                }
-
-            } catch (e: Exception) {
-                Log.d("실패", e.message!!)
+    private suspend fun initNetwork() : Deferred<String> =
+        CoroutineScope(Dispatchers.IO).async {
+            val response = PlayListServiceCreator.myMusicPlayListService.getMyMusicPlayList()
+            val data = response.body()?.data
+            if (data != null) {
+                Log.d("하왜이러는겨","${data.likeCount}")
             }
+            withContext(Dispatchers.Main) {
+                if (data != null) {
+                    upMenuData.add(MutableLiveData<String>().apply {
+                        value = data.likeCount.toString()
+                    })
+                    upMenuData.add(MutableLiveData<String>().apply {
+                        value = data.saveCount.toString()
+                    })
+                    upMenuData.add(MutableLiveData<String>().apply {
+                        value = data.recentPlayedCount.toString()
+                    })
+                    upMenuData.add(MutableLiveData<String>().apply {
+                        value = data.mostPlayedCount.toString()
+                    })
+                }
+            }
+            return@async "Finished"
         }
-    }
+
 
 
     override fun onDestroyView() {

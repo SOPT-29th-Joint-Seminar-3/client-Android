@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="getData"
+            type="org.sopt.clonegenie.detail.ui.MyMusicFragment" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -162,7 +168,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
                     android:fontFamily="@font/notosans"
-                    android:text="55"
+                    android:text="@{getData.upMenuData[2]}"
                     android:textColor="#FAFAFA"
                     android:textFontWeight="500"
                     android:textSize="32sp"
@@ -203,7 +209,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
                     android:fontFamily="@font/notosans"
-                    android:text="55"
+                    android:text="@{getData.upMenuData[0]}"
                     android:textColor="#FAFAFA"
                     android:textFontWeight="500"
                     android:textSize="32sp"
@@ -244,7 +250,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
                     android:fontFamily="@font/notosans"
-                    android:text="12"
+                    android:text="@{getData.upMenuData[1]}"
                     android:textColor="#FAFAFA"
                     android:textFontWeight="500"
                     android:textSize="32sp"
@@ -285,7 +291,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
                     android:fontFamily="@font/notosans"
-                    android:text="11"
+                    android:text="@{getData.upMenuData[3]}"
                     android:textColor="#FAFAFA"
                     android:textFontWeight="500"
                     android:textSize="32sp"
